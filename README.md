@@ -13,6 +13,7 @@ Este proyecto tiene como objetivo principal proporcionar un entorno práctico pa
 
 El proyecto está diseñado para ser modular y facilitar la comprensión de cada componente:
 
+```bash
 ├── HELP.md
 ├── mvnw
 ├── mvnw.cmd
@@ -76,6 +77,7 @@ El proyecto está diseñado para ser modular y facilitar la comprensión de cada
             └── backend
                 └── backend
                     └── BackendApplicationTests.class
+```
 
 ## 🚀 Funcionalidades Principales
 
@@ -100,19 +102,40 @@ El proyecto está diseñado para ser modular y facilitar la comprensión de cada
 - Conocimientos básicos de Java y Spring Boot.
 
 Conceptos Clave Practicados
+Aquí tienes una versión actualizada con los conceptos clave adicionales, lista para pegar en tu archivo README.md:
 
-    Spring Boot:
-        Configuración rápida de proyectos backend.
-        Uso de anotaciones como @RestController, @Service, y @Repository.
+## Conceptos Clave Practicados
 
-    JPA:
-        Definición de entidades con @Entity.
-        Relaciones entre entidades (por ejemplo, @OneToMany, @ManyToOne).
-        Consultas básicas mediante interfaces JpaRepository.
+#### Spring Boot:
+- Configuración rápida de proyectos backend.
+- Uso de anotaciones como `@RestController`, `@Service`, y `@Repository`.
+- Configuración de propiedades en `application.properties`.
 
-    API REST:
-        Creación de controladores con operaciones CRUD.
-        Gestión de rutas y mapeo de solicitudes con @RequestMapping y @GetMapping.
+#### JPA (Java Persistence API):
+- Definición de entidades con `@Entity`.
+- Relaciones entre entidades (por ejemplo, `@OneToMany`, `@ManyToOne`).
+- Consultas básicas mediante interfaces `JpaRepository`.
+
+#### API REST:
+- Creación de controladores con operaciones CRUD.
+- Gestión de rutas y mapeo de solicitudes con `@RequestMapping`, `@GetMapping`, `@PostMapping`, etc.
+- Formato JSON en respuestas y solicitudes.
+
+#### Buenas Prácticas:
+- Organización de código en capas: `Controller`, `Service`, `Repository`.
+- Separación de responsabilidades en el proyecto.
+- Uso de nombres descriptivos para clases, métodos y rutas.
+
+#### Otros Conceptos:
+- Uso del principio de inyección de dependencias con `@Autowired`.
+- Manejo de errores básicos en endpoints REST.
+- Testing inicial con clases `@SpringBootTest`.
+
+#### Herramientas Adicionales:
+- `Maven`: Gestión de dependencias y construcción del proyecto.
+- `Postman`: Testing de endpoints REST.
+- `PostgreSQL`: Creación e inyección de datos directamente en BD asi como consultas para validar correcto relacionamiento.
+
 
 🧩 Próximos Pasos
 
