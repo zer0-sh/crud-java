@@ -8,75 +8,99 @@ Este proyecto tiene como objetivo principal proporcionar un entorno práctico pa
 - Implementar la persistencia de datos utilizando Spring Data JPA.
 - Reforzar conceptos básicos y avanzados de la arquitectura en capas en el desarrollo backend.
 - Experimentar con la configuración y personalización de proyectos Spring Boot.
+- Implementar y experimentar con JUnit y las pruebas unitarias para validar el correcto funcionamiento del proyecto.
 
 ## 📂 Estructura del Proyecto
 
 El proyecto está diseñado para ser modular y facilitar la comprensión de cada componente:
 
 ```bash
-├── HELP.md
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
+├── README.md
 ├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── backend
-│   │   │           ├── BackendApplication.java
-│   │   │           ├── model
-│   │   │           │   ├── estado.java
-│   │   │           │   ├── pais.java
-│   │   │           │   └── persona.java
-│   │   │           ├── repository
-│   │   │           │   ├── estadoRepository.java
-│   │   │           │   ├── paisRepository.java
-│   │   │           │   └── personaRepository.java
-│   │   │           ├── rest
-│   │   │           │   ├── estadoREST.java
-│   │   │           │   ├── paisREST.java
-│   │   │           │   └── personaREST.java
-│   │   │           └── service
-│   │   │               ├── estadoService.java
-│   │   │               ├── paisService.java
-│   │   │               └── personaService.java
-│   │   └── resources
-│   │       ├── application.properties
-│   │       ├── static
-│   │       └── templates
-│   └── test
-│       └── java
-│           └── com
-│               └── backend
-│                   └── backend
-│                       └── BackendApplicationTests.java
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── backend
+│   │   │           ├── BackendApplication.java
+│   │   │           ├── model
+│   │   │           │   ├── Estado.java
+│   │   │           │   ├── Pais.java
+│   │   │           │   └── Persona.java
+│   │   │           ├── repository
+│   │   │           │   ├── EstadoRepository.java
+│   │   │           │   ├── PaisRepository.java
+│   │   │           │   └── PersonaRepository.java
+│   │   │           ├── rest
+│   │   │           │   ├── EstadoREST.java
+│   │   │           │   ├── PaisREST.java
+│   │   │           │   └── PersonaREST.java
+│   │   │           └── service
+│   │   │               ├── EstadoService.java
+│   │   │               ├── PaisService.java
+│   │   │               └── PersonaService.java
+│   │   └── resources
+│   │       └── application.properties
+│   └── test
+│       └── java
+│           └── com
+│               └── backend
+│                   ├── BackendApplicationTests.java
+│                   └── model
+│                       ├── EstadoTest.java
+│                       ├── PaisTest.java
+│                       └── PersonaTest.java
 └── target
     ├── classes
-    │   ├── application.properties
-    │   └── com
-    │       └── backend
-    │           ├── BackendApplication.class
-    │           ├── model
-    │           │   ├── estado.class
-    │           │   ├── pais.class
-    │           │   └── persona.class
-    │           ├── repository
-    │           │   ├── estadoRepository.class
-    │           │   ├── paisRepository.class
-    │           │   └── personaRepository.class
-    │           ├── rest
-    │           │   ├── estadoREST.class
-    │           │   ├── paisREST.class
-    │           │   └── personaREST.class
-    │           └── service
-    │               ├── estadoService.class
-    │               ├── paisService.class
-    │               └── personaService.class
+    │   ├── application.properties
+    │   └── com
+    │       └── backend
+    │           ├── BackendApplication.class
+    │           ├── model
+    │           │   ├── Estado.class
+    │           │   ├── Pais.class
+    │           │   └── Persona.class
+    │           ├── repository
+    │           │   ├── EstadoRepository.class
+    │           │   ├── PaisRepository.class
+    │           │   └── PersonaRepository.class
+    │           ├── rest
+    │           │   ├── EstadoREST.class
+    │           │   ├── PaisREST.class
+    │           │   └── PersonaREST.class
+    │           └── service
+    │               ├── EstadoService.class
+    │               ├── PaisService.class
+    │               └── PersonaService.class
+    ├── generated-sources
+    │   └── annotations
+    ├── generated-test-sources
+    │   └── test-annotations
+    ├── maven-status
+    │   └── maven-compiler-plugin
+    │       ├── compile
+    │       │   └── default-compile
+    │       │       ├── createdFiles.lst
+    │       │       └── inputFiles.lst
+    │       └── testCompile
+    │           └── default-testCompile
+    │               ├── createdFiles.lst
+    │               └── inputFiles.lst
+    ├── surefire-reports
+    │   ├── com.backend.BackendApplicationTests.txt
+    │   ├── com.backend.backend.BackendApplicationTests.txt
+    │   ├── TEST-com.backend.BackendApplicationTests.xml
+    │   └── TEST-com.backend.backend.BackendApplicationTests.xml
     └── test-classes
         └── com
             └── backend
-                └── backend
-                    └── BackendApplicationTests.class
+                ├── BackendApplicationTests.class
+                └── model
+                    ├── EstadoTest.class
+                    ├── PaisTest.class
+                    └── PersonaTest.class
 ```
 
 ## 🚀 Funcionalidades Principales
@@ -95,10 +119,14 @@ El proyecto está diseñado para ser modular y facilitar la comprensión de cada
 4. **Modularidad**:
    - Separación de responsabilidades utilizando la arquitectura en capas (modelo, repositorio, servicio y controlador).
 
+5. **Pruebas unitarias**:
+   - Pruebas unitarias para validar funcionamiento correcto de las clases.
+
 ## 📌 Requisitos Previos
 
 - **Java 17** (o superior).
 - **Maven** como herramienta de construcción.
+- **JUnit5** utilizada para realizar pruebas unitarias.
 - Conocimientos básicos de Java y Spring Boot.
 
 ## Conceptos Clave Practicados
@@ -117,6 +145,9 @@ El proyecto está diseñado para ser modular y facilitar la comprensión de cada
 - Creación de controladores con operaciones CRUD.
 - Gestión de rutas y mapeo de solicitudes con `@RequestMapping`, `@GetMapping`, `@PostMapping`, etc.
 - Formato JSON en respuestas y solicitudes.
+
+#### JUnit:
+- Se han implementado pruebas unitarias básicas usando JUnit 5 para las entidades Pais, Persona y Estado, con el objetivo de asegurar que las funcionalidades CRUD básicas están correctamente implementadas.
 
 #### Buenas Prácticas:
 - Organización de código en capas: `Controller`, `Service`, `Repository`.
