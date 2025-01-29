@@ -101,9 +101,6 @@ El proyecto está diseñado para ser modular y facilitar la comprensión de cada
 - **Maven** como herramienta de construcción.
 - Conocimientos básicos de Java y Spring Boot.
 
-Conceptos Clave Practicados
-Aquí tienes una versión actualizada con los conceptos clave adicionales, lista para pegar en tu archivo README.md:
-
 ## Conceptos Clave Practicados
 
 #### Spring Boot:
