@@ -14,25 +14,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backend.service.personaService;
-import com.backend.model.persona;
+import com.backend.service.PersonaService;
+import com.backend.model.Persona;
 
 @RestController
 @RequestMapping("/personas")
-public class personaREST {
+public class PersonaREST {
 	
 	@Autowired
-	private personaService personaService;
+	private PersonaService personaService;
 	
 	@GetMapping
-	private ResponseEntity<List<persona>> getAllPersonas (){
+	private ResponseEntity<List<Persona>> getAllPersonas (){
 		return ResponseEntity.ok(personaService.findAll());
 	}
 	
 	@PostMapping
-	private ResponseEntity<persona> savePersona (@RequestBody persona persona){
+	private ResponseEntity<Persona> savePersona (@RequestBody Persona persona){
 		try {
-			persona personaGuardada = personaService.save(persona);		
+			Persona personaGuardada = personaService.save(persona);		
 		return ResponseEntity.created(new URI("/personas/"+personaGuardada.getId())).body(personaGuardada);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();

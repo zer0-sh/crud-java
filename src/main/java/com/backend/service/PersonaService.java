@@ -9,33 +9,33 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.backend.model.persona;
-import com.backend.repository.personaRepository;
+import com.backend.model.Persona;
+import com.backend.repository.PersonaRepository;
 
 @Service
-public class personaService {
+public class PersonaService {
 		
 	@Autowired
-	private personaRepository personaRepository;
+	private PersonaRepository personaRepository;
 
-	public List<persona> findAll() {
+	public List<Persona> findAll() {
 		return personaRepository.findAll();
 	}
 
-	public List<persona> findAll(Sort sort) {
+	public List<Persona> findAll(Sort sort) {
 		return personaRepository.findAll(sort);
 	}
 
 
-	public Page<persona> findAll(Pageable pageable) {
+	public Page<Persona> findAll(Pageable pageable) {
 		return personaRepository.findAll(pageable);
 	}
 
-	public <S extends persona> S save(S entity) {
+	public <S extends Persona> S save(S entity) {
 		return personaRepository.save(entity);
 	}
 
-	public Optional<persona> findById(Long id) {
+	public Optional<Persona> findById(Long id) {
 		return personaRepository.findById(id);
 	}
 
@@ -48,7 +48,7 @@ public class personaService {
 		return false;
 	}
 
-	public void delete(persona entity) {
+	public void delete(Persona entity) {
 		personaRepository.delete(entity);
 	}
 

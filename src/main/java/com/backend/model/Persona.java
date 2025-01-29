@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table (name = "persona")
-public class persona {
+public class Persona {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,12 +21,12 @@ public class persona {
 	
 	@ManyToOne
 	@JoinColumn (name="id_pais")
-	private pais pais;
+	private Pais pais;
 	@ManyToOne
 	@JoinColumn (name="id_estado")
-	private estado estado;
+	private Estado estado;
 
-	public persona(String nombre, String apellido, int edad, pais pais, estado estado) {
+	public Persona(String nombre, String apellido, int edad, Pais pais, Estado estado) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -34,7 +34,7 @@ public class persona {
 		this.pais = pais;
 		this.estado = estado;
 	}
-	public persona() {
+	public Persona() {
 	}
 	public Long getId() {
 		return id;
@@ -60,16 +60,16 @@ public class persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	public pais getPais() {
+	public Pais getPais() {
 		return pais;
 	}
-	public void setPais(pais pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
-	public estado getEstado() {
+	public Estado getEstado() {
 		return estado;
 	}
-	public void setEstado(estado estado) {
+	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
 }

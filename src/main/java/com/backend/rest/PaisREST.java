@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backend.service.paisService;
-import com.backend.model.pais;
+import com.backend.service.PaisService;
+import com.backend.model.Pais;
 
 @RestController
 @RequestMapping ("/pais")
-public class paisREST {
+public class PaisREST {
 
 	
 	@Autowired
-	private paisService paisService;
+	private PaisService paisService;
 	
 	@GetMapping
-	private ResponseEntity<List<pais>> getAllPaises (){
+	private ResponseEntity<List<Pais>> getAllPaises (){
 		return ResponseEntity.ok(paisService.findAll());
 	}
 	

@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backend.service.estadoService;
-import com.backend.model.estado;
+import com.backend.service.EstadoService;
+import com.backend.model.Estado;
 
 @RestController
 @RequestMapping ("/estados")
-public class estadoREST {
+public class EstadoREST {
 	
 	@Autowired
-	private estadoService estadoService;
+	private EstadoService estadoService;
 	
 	@GetMapping ("{id}")
-	private ResponseEntity<List<estado>> getAllEstadosByPais (@PathVariable("id") Long idPais){
+	private ResponseEntity<List<Estado>> getAllEstadosByPais (@PathVariable("id") Long idPais){
 		return ResponseEntity.ok(estadoService.findAllByCountry(idPais));
 		
 	}

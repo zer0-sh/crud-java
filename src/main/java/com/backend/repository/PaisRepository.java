@@ -2,8 +2,8 @@ package com.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.backend.model.pais;
+import com.backend.model.Pais;
 
-public interface paisRepository extends JpaRepository<pais, Long> {
+public interface PaisRepository extends JpaRepository<Pais, Long> {
 
 }

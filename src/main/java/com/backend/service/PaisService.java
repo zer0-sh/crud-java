@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.backend.model.pais;
-import com.backend.repository.paisRepository;
+import com.backend.model.Pais;
+import com.backend.repository.PaisRepository;
 
 @Service
-public class paisService {
+public class PaisService {
 	
 
 	@Autowired
-	private paisRepository paisRepository;
+	private PaisRepository paisRepository;
 
 
-	public List<pais> findAll() {
+	public List<Pais> findAll() {
 		return paisRepository.findAll();
 	}
 
